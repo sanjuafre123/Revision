@@ -1,5 +1,5 @@
 import 'dart:io';
-class LibraryItem {
+abstract class LibraryItem {
   String itemId = '';
   String title = '';
 
