@@ -20,12 +20,15 @@ class LibraryItem {
 
 class Book extends LibraryItem
 {
-
+  String author;
+  int numPages;
+  
 }
 
 class DVD extends LibraryItem
 {
-
+  String director;
+  int duration; 
 }
 
 void main() {
