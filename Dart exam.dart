@@ -1,42 +1,58 @@
+
 import 'dart:io';
 
-class LibraryItem {
-  String? title;
-  String? itemId;
-  
-  void setter() {
-    stdout.write("Enter the ItemId : ");
-    title = stdin.readLineSync()!;
-    stdout.write("Enter the Title : ");
-    itemId = stdin.readLineSync()!;
-  }
+abstract class LibraryItem {
+  String itemId = '';
+  String title = '';
 
-  void getter()
+  LibraryItem();
+
+  void getItemDetails();
+}
+
+class Book extends LibraryItem {
+  String? author;
+  int? numPages;
+
+  void set()
   {
-    print("ItemId : $itemId");
-    print("Title : $title");
+    stdout.write("Enter the BookId :");
+    itemId = stdin.readLineSync()!;
+    stdout.write("Enter the BookId :");
+    title = stdin.readLineSync()!;
+    stdout.write("Enter the BookId :");
+    author = stdin.readLineSync()! ;
+    stdout.write("Enter the BookId :");
+    numPages = int.parse(stdin.readLineSync()!);
+
+  }
+
+  void getItemDetails() {
+    print('Book ID: $itemId');
+    print('Title: $title');
+    print('Author: $author');
+    print('Number of Pages: $numPages');
   }
 }
 
-class Book extends LibraryItem
-{
-  String author;
-  int numPages;
-  
-}
+class DVD extends LibraryItem {
+  String? director;
+  int? duration; 
 
-class DVD extends LibraryItem
-{
-  String director;
-  int duration; 
+
+  void getItemDetails() {
+    print('DVD ID: $itemId');
+    print('Title: $title');
+    print('Director: $director');
+    print('Duration: $duration minutes');
+  }
 }
 
 void main() {
+  Book book = Book();
+  DVD dvd = DVD();
+  book.set();
 
-  LibraryItem l1 = LibraryItem();
-
-  l1.setter();
-  l1.getter();
+  book.getItemDetails();
+  dvd.getItemDetails();
 }
-
-
