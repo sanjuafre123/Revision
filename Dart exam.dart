@@ -28,10 +28,10 @@ class Book extends LibraryItem {
   }
 
   void getItemDetails() {
-    print('Book ID: $itemId');
+    print('ID: $itemId');
     print('Title: $title');
     print('Author: $author');
-    print('Number of Pages: $numPages');
+    print('Number: $numPages');
   }
 }
 
@@ -41,7 +41,7 @@ class DVD extends LibraryItem {
 
 
   void getItemDetails() {
-    print('DVD ID: $itemId');
+    print('ID: $itemId');
     print('Title: $title');
     print('Director: $director');
     print('Duration: $duration minutes');
